@@ -9,17 +9,28 @@ This repository contains solutions and implementations for the **High-Performanc
 ## Assignments
 
 ### 1. MPI and OpenMP
+### 1. MPI and OpenMP
+
 **Topics Covered:**
-- Implementation of `MPI_Exscan` using point-to-point communication.
-- Extension for hybrid programming with MPI and OpenMP.
-- Parallel I/O with MPI and 3D matrix operations using random seeds.
-- Data compression using libraries like Zlib, ZFP, and SZ.
-- **Parallel Parametric Search in Machine Learning:**
-  - Grid search for hyperparameter tuning.
-  - Parallelization of grid search using:
-    - Python multiprocessing pool.
-    - MPI Futures.
-    - Master-worker model with MPI.
+
+1. **Custom MPI Prefix Scan Implementation:**
+   - Develop a custom `MPI_Exscan` function using point-to-point communication (`send`/`recv`) to calculate prefix sums for integer data.
+
+2. **Hybrid Programming with MPI and OpenMP:**
+   - Extend the `MPI_Exscan` function to support hybrid programming by combining MPI and OpenMP. Each MPI process spawns multiple threads, which execute the same SPMD (Single Program Multiple Data) code.
+
+3. **Parallel I/O with MPI:**
+   - Implement parallel I/O operations for 3D matrices (NxNxN) initialized with unique random seeds. Each thread writes its data to a binary file in parallel, ensuring correctness by validating the written data in a separate program.
+
+4. **Compressed Parallel I/O:**
+   - Enhance the parallel I/O implementation by incorporating compression of 3D matrices before writing. Use libraries such as Zlib, ZFP, or SZ to compress data and handle variable-sized compressed blocks.
+
+5. **Parallel Parametric Search for Machine Learning:**
+   - Optimize hyperparameter tuning for machine learning models through parallel grid search. Implement this using:
+     - Python multiprocessing pool.
+     - MPI Futures.
+     - A master-worker model with MPI for distributing hyperparameter combinations efficiently.
+
 
 **Key Highlights:**
 - **Custom MPI Implementations:** Created a `MPI_Exscan` operation using point-to-point communication for efficient prefix sums and extended it to support hybrid MPI and OpenMP models.
