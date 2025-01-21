@@ -153,12 +153,61 @@ mpiexec -n 12 python question2_master_worker.py
     - **AVX vectorization compared to the serial code.**
     - **OpenMP-based Parallel CPU Implementation and Serial Implementation ** (as a baseline comparison to CUDA).
   
+### How to Run Commands for Assignment 2
 
+#### Question 1: Original code
+```bash
+nano weno.h
+nano bench.c
+gcc bench.c -o weno -lm
+./weno
+```
 
-Relevant files:
-- `weno5_vectorized.c`
-- `weno5_openmp.c`
-- `cuda_complex_mult.cu`
+#### Question 1: Makefile vectorization
+```bash
+nano question1_a_makefile.txt
+make clean
+make
+```
+
+#### Question 1: OMP vectorization
+```bash
+nano question1_b_omp.c
+nano question1_a_omp.h
+gcc -O3 -fopenmp question1_b_omp.c -o question1_b_omp -lm
+./question1_b_omp
+```
+
+#### Question 1: AVX vectorization
+```bash
+nano question1_b_avx.c
+nano question1_a_avx.h
+gcc -O3 -mavx2 question1_b_avx.c -o question1_b_avx -lm
+./question1_b_avx
+```
+
+#### Question 2: Cuda
+```bash
+nano question2_cuda.cu
+module load nvhpc-hpcx-cuda12/23.9
+nvcc -o question2_cuda question2_cuda.cu
+./question2_cuda
+```
+
+#### Question 2: Serial cpu code
+```bash
+nano question2_serial_cpu_code.c
+gcc -O3 question2_serial_cpu_code.c -o question2_serial_cpu_code
+./question2_serial_cpu_code
+```
+
+#### Question 2: Omp cpu code
+```bash
+nano question2_omp_cpu.c
+gcc -O3 -fopenmp question2_omp_cpu.c -o question2_omp_cpu
+./question2_omp_cpu
+```
+
 
 ---
 
