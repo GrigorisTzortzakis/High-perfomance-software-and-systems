@@ -213,36 +213,37 @@ gcc -O3 -fopenmp question2_omp_cpu.c -o question2_omp_cpu
 
 ### 3. OpenMP and GPUs
 **Topics Covered:**
-- **OpenMP GPU Application:**
-  - Implementation of 2D complex matrix multiplication on GPUs.
-  - Host-side initialization and storage for real and imaginary parts.
-  - Optimized parallel computations using OpenMP.
+- This assignment is a variation of Assignment 2, focusing on implementing OpenMP GPU code instead of CUDA for high-performance computations
 
 **Key Highlights:**
-- Integration of OpenMP with GPU programming for high-performance matrix operations.
-- Comparative analysis of GPU vs CPU performance for various matrix sizes.
+- Remade the cuda version using only OMP.
+- Comparative analysis of GPU vs CPU performance for various matrix sizes and also cuda vs omp.
 
-Relevant files:
-- `openmp_gpu_mult.c`
+### How to Run Commands for Assignment 2
+
+#### Question 1: Omp gpu code
+```bash
+nano question1_a_gpu_omp.c
+module load nvhpc-hpcx-cuda12/23.9
+nvc -O3 -mp=gpu question1_a_gpu_omp.c -o question1_a_gpu_omp
+./question1_a_gpu_omp
+```
+
+#### Question 1: Serial cpu code
+```bash
+nano question2_serial_cpu_code.c
+gcc -O3 question2_serial_cpu_code.c -o question2_serial_cpu_code
+./question2_serial_cpu_code
+```
+
+#### Question 1: Omp cpu code
+```bash
+nano question2_omp_cpu.c
+gcc -O3 -fopenmp question2_omp_cpu.c -o question2_omp_cpu
+./question2_omp_cpu
+```
+
 
 ---
 
-## How to Use
 
-### Prerequisites
-- **MPI:** Ensure MPI is installed (e.g., OpenMPI, MPICH).
-- **OpenMP:** Supported compiler with OpenMP (e.g., GCC).
-- **CUDA:** NVIDIA CUDA Toolkit installed and compatible GPU.
-
-### Compilation
-Use the provided `Makefile` in respective folders:
-```bash
-# For MPI
-make mpi
-
-# For SIMD and CUDA
-make simd
-make cuda
-
-# For OpenMP and GPUs
-make openmp
