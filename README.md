@@ -75,6 +75,16 @@ export OMP_NUM_THREADS=4
 mpirun -mca coll ^hcoll -np 4 ./q1d
 ```
 
+Before running the Python scripts for Question 2, ensure you set up a Python virtual environment and install the required dependencies. Use the following commands to prepare your environment:
+
+```bash
+python3 -m venv ~/myenv
+source ~/myenv/bin/activate
+python -m pip install --upgrade pip
+pip install scikit-learn
+pip install mpi4py
+```
+
 #### Question 2: Serial Implementation
 ```bash
 nano question2_serial.py
