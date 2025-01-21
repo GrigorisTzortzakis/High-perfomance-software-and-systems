@@ -47,7 +47,57 @@ This repository contains solutions and implementations for the **High-Performanc
 nano question1_a.c
 mpicc -o q1a question1_a.c
 mpirun -np 4 ./q1a
+```
 
+#### Question 1: Part (b)
+```bash
+nano question1_b.c
+module load nvhpc/24.11
+mpic++ -fopenmp question1_b.c -o q1b
+export OMP_NUM_THREADS=4
+mpirun -mca coll ^hcoll -np 4 ./q1b
+```
+
+#### Question 1: Part (c)
+```bash
+nano question1_c.c
+module load nvhpc/24.11
+mpic++ -fopenmp question1_c.c -o q1c
+export OMP_NUM_THREADS=4
+mpirun -mca coll ^hcoll -np 4 ./q1c
+```
+
+#### Question 1: Part (d)
+```bash
+module load nvhpc/24.11
+mpicc -fopenmp question1_d.c -o q1d -lz -lm
+export OMP_NUM_THREADS=4
+mpirun -mca coll ^hcoll -np 4 ./q1d
+```
+
+#### Question 2: Serial Implementation
+```bash
+nano question2_serial.py
+python question2_serial.py
+```
+
+#### Question 2: Multiprocessing Implementation
+```bash
+nano question2_multiprocessing.py
+python question2_multiprocessing.py
+```
+
+#### Question 2: MPI Futures Implementation
+```bash
+nano question2_futures.py
+mpiexec -n 12 python question2_futures.py
+```
+
+#### Question 2: Master-Worker MPI Implementation
+```bash
+nano question2_master_worker.py
+mpiexec -n 12 python question2_master_worker.py
+```
 
 ---
 
