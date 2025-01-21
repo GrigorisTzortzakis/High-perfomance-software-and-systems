@@ -34,7 +34,7 @@ This repository contains solutions and implementations for the **High-Performanc
 **Key Highlights:**
 - **Custom MPI Implementations:** Created a `MPI_Exscan` operation using point-to-point communication for efficient prefix sums and extended it to support hybrid MPI and OpenMP models.
 - **Parallel I/O:** Designed a mechanism for all threads in a hybrid environment to write independent 3D matrices to a binary file and validated data consistency through parallel and serial reads.
-- **Compression Techniques:** Implemented compression for 3D matrices using libraries like Zlib and ZFP, enabling efficient storage of variable-sized compressed data blocks.
+- **Compression Techniques:** Implemented compression for 3D matrices using Zlib library, enabling efficient storage of variable-sized compressed data blocks.
 - **Machine Learning Grid Search:** Parallelized hyperparameter optimization for machine learning models using multiple approaches:
   - Python multiprocessing for task-level parallelism.
   - MPI futures for distributed computing.
