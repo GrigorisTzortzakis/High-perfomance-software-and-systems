@@ -75,7 +75,7 @@ export OMP_NUM_THREADS=4
 mpirun -mca coll ^hcoll -np 4 ./q1d
 ```
 
-Before running the Python scripts for Question 2, ensure you set up a Python virtual environment and install the required dependencies. Use the following commands to prepare your environment:
+#### Before running the Python scripts for Question 2, ensure you set up a Python virtual environment and install the required dependencies. Use the following commands to prepare your environment:
 
 ```bash
 python3 -m venv ~/myenv
