@@ -133,9 +133,27 @@ mpiexec -n 12 python question2_master_worker.py
    - Benchmark and analyze performance improvements achieved through vectorization and parallelization.
    - Compare CUDA implementations against sequential CPU-based implementations where applicable.
 
-**Key Highlights:**
-- Enhanced vectorization techniques for WENO5 numerical scheme.
-- High-speed complex matrix operations using CUDA and performance benchmarks.
+### Key Highlights
+
+- **Makefile and Compiler Optimizations:**
+  - For the WENO5 reference implementation, the Makefile is configured to enable **automatic vectorization** using `-ftree-vectorize` and other aggresive compiler optimization flags, such as o3 and ffast. This minimizes manual code changes required to achieve SIMD efficiency.
+
+- **OpenMP Implementation:**
+  - Minimal code modifications are needed to integrate OpenMP into the WENO5 computation. The implementation exploits loop-level parallelism, improving performance with minimal restructuring.
+
+- **AVX Intrinsics Implementation:**
+  - The AVX (Advanced Vector Extensions) intrinsics are used.
+
+- **CUDA for Complex Matrix Multiplication:**
+  - A CUDA-based implementation is developed for 2D complex matrix multiplication, fully leveraging the GPU's parallel architecture. Input matrices are initialized on the host and transferred to the GPU for computation.
+
+- **Performance Benchmarks:**
+  - Comparative analysis is performed for all implementations:
+    - **OpenMP vectorization compared to the serial code.**
+    - **AVX vectorization compared to the serial code.**
+    - **OpenMP-based Parallel CPU Implementation and Serial Implementation ** (as a baseline comparison to CUDA).
+  
+
 
 Relevant files:
 - `weno5_vectorized.c`
