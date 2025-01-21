@@ -40,11 +40,14 @@ This repository contains solutions and implementations for the **High-Performanc
   - MPI futures for distributed computing.
   - A master-worker model leveraging MPI to distribute hyperparameter combinations.
 
-Relevant files:
-- `mpi_exscan.c`
-- `mpi_openmp_hybrid.c`
-- `mpi_io_compression.c`
-- `mlp_parametric_search.py`
+### How to Run Commands for Assignment 1
+
+#### Question 1: Part (a)
+```bash
+nano question1_a.c
+mpicc -o q1a question1_a.c
+mpirun -np 4 ./q1a
+
 
 ---
 
