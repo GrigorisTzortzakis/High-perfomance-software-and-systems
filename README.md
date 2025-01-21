@@ -9,7 +9,6 @@ This repository contains solutions and implementations for the **High-Performanc
 ## Assignments
 
 ### 1. MPI and OpenMP
-### 1. MPI and OpenMP
 
 **Topics Covered:**
 
