@@ -113,13 +113,25 @@ mpiexec -n 12 python question2_master_worker.py
 
 ### 2. SIMD and CUDA
 **Topics Covered:**
-- **SIMD Implementation for WENO5:**
-  - Enable compiler-based vectorization.
-  - Develop OpenMP and SSE/AVX vectorized versions.
-  - Benchmarking and optimization for numerical PDE solutions.
-- **CUDA for Complex Matrix Multiplication:**
-  - Efficient multiplication of complex NxN matrices.
-  - Performance comparison between CUDA and CPU-based implementations.
+
+1. **SIMD Implementation for WENO5:**
+   - Enable compiler-based automatic vectorization for the provided WENO5 implementation.
+   - Develop a vectorized WENO5 computation using OpenMP.
+   - Implement vectorization using SSE and/or AVX intrinsics for optimized numerical computations.
+
+2. **CUDA for Complex Matrix Multiplication:**
+   - Develop a CUDA application to perform 2D complex matrix multiplication.
+   - Handle the multiplication of two NxN matrices with complex elements, using the formula:
+     \[
+     (A + Bi)(C + Di) = (AC - BD) + (AD + BC)i
+     \]
+   - Allocate and initialize input matrices (A, B, C, D) with random values on the host.
+   - Store the results in two matrices (E and F) representing the real and imaginary parts of the output.
+   - Measure and compare performance across varying matrix sizes.
+
+3. **Performance Analysis:**
+   - Benchmark and analyze performance improvements achieved through vectorization and parallelization.
+   - Compare CUDA implementations against sequential CPU-based implementations where applicable.
 
 **Key Highlights:**
 - Enhanced vectorization techniques for WENO5 numerical scheme.
