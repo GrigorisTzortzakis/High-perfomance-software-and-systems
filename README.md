@@ -219,7 +219,7 @@ gcc -O3 -fopenmp question2_omp_cpu.c -o question2_omp_cpu
 - Remade the cuda version using only OMP.
 - Comparative analysis of GPU vs CPU performance for various matrix sizes and also cuda vs omp.
 
-### How to Run Commands for Assignment 2
+### How to Run Commands for Assignment 3
 
 #### Question 1: Omp gpu code
 ```bash
